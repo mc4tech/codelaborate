@@ -11,6 +11,7 @@ chai.use(chaiHttp);
 let request;
 
 
+
 describe('GET /api/examples', function () {
   
   // clear the test db 
