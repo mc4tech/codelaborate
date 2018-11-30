@@ -10,7 +10,10 @@ it('should each user an unqine I.D'),function(){
 
 }
 // Write a negative unit test
+testusername
 it('should enforce unqine username', function() {
     expect(unqinename("matt")).to.equal(false);
   });
 });
+=======
+master
