@@ -1,0 +1,26 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "RES-test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattbyrnes/codelaborate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattbyrnes/codelaborate/issues"
+  },
+  "homepage": "https://github.com/mattbyrnes/codelaborate#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}
