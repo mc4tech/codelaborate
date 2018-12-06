@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="codemirror/lib/codemirror.css" rel="stylesheet">
+    <link rel="stylesheet" href="codemirror/theme/monokai.css">
+    <link rel="stylesheet" href="style.css"
+</head>
+
+<body>
+<h1>Codelaborate</h1>
+<div class= "container">
+<form>
+<div class="row">
+<div class="col-6 html">
+    <p>HTML</p>
+<textarea id="codeEditor">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
 </head>
 <body>
-    <h1>Codelaborate</h1>
+            
 </body>
+</html>
+</textarea>
+</div>
+<div class="col-6 css">
+<p>CSS</p>
+<textarea id="cssEditor">
+body {
+
+}
+</textarea>
+</div>
+</div>
+<br/>
+<div class="row">
+<div class="col-6 js">
+<p>JS</p>
+<textarea id="jsEditor"></textarea>
+</div>
+<div class="col-6 iframe">
+<p>RESULT</p>
+</div>
+</div>
+<br/>
+<div class="row">
+<button class ="btn btn-info col-6">SAVE</button>
+<button class="btn btn-success col-6">RUN</button>
+</div>
+</form>
+</div>
+
+    <!-- add scripts here  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="codemirror/lib/codemirror.js"></script>
+    <script src="codemirror/mode/xml/xml.js"></script>
+    <script src="codemirror/mode/css/css.js"></script>
+    <script src="codemirror/mode/javascript/javascript.js"></script>
+    <script src="codemirror/addon/edit/closetag.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
 </html>
