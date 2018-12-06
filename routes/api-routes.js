@@ -60,4 +60,12 @@ module.exports = function (app) {
                 res.json(err);
             });
     });
+  
+ sterling1
 };
+
+=======
+  });
+};
+
+master
