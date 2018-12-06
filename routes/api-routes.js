@@ -1,23 +1,3 @@
-// Require all models
-const db = require('../models');
-
-module.exports = function(app) {
-  app.post('/api/users'), function (req, res) {
-    console.log('------Adding Link in mongo');
-    db.user.create(req.body)
-        .then(function (dbusers) {
-            res.json(dbusers);
-        })
-        .catch(function (err) {
-            res.json(err);
-        });
-
-  }
-  app.get('/api/users', function(req, res) {
-    db.User.findAll({}).then(function(dbUsers) {
-      res.json(dbUsers);
-=======
-
 // module.exports exports this function so it can be required by another file (in this case, server.js)
 // Must pass in app because it contains the Express application
 module.exports = function (app) {
@@ -78,11 +58,4 @@ module.exports = function (app) {
             });
     });
   
- sterling1
 };
-
-=======
-  });
-};
-
-master

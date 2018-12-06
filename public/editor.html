@@ -1,0 +1,119 @@
+<!doctype html>
+
+<head>
+
+	<meta charset="utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+	<script src="lib/codemirror.js"></script>
+	<script src="mode/xml/xml.js"></script> 
+	<script src="addon/fold/foldcode.js"></script>
+	<script src="mode/javascript/javascript.js"></script>
+	<script src="mode/css/css.js"></script>
+	<script src="mode/htmlmixed/htmlmixed.js"></script>
+
+	<link rel=stylesheet href="../doc/docs.css">
+	<link rel="stylesheet" href="../lib/codemirror.css">
+
+	<title>CodeMirror: Codelaborate</title>
+
+	
+</head>
+
+<body>
+
+	<h2>Codelaborate</h2>
+
+	<form>
+
+		<textarea id="code-html" name="code-html">
+
+				<p>Canvas pane goes here:</p>
+				<br />
+				<p>Canvas pane goes here:</p>
+				<br />
+				<p>Canvas pane goes here:</p>
+				<br />
+
+
+		</textarea>
+
+		<textarea id="code" name="code">
+
+		</textarea>
+		
+
+	</form>
+
+	<iframe id="preview">
+
+	</iframe>
+
+
+
+	<script id="script">
+
+		window.onload = function () {
+
+			var te = document.getElementById("code");
+			var sc = document.getElementById("script");
+			te.value = (sc.textContent || sc.innerText || sc.innerHTML).replace(/^\s*/, "");
+			sc.innerHTML = "";
+
+			// var te_html = document.getElementById("code-html");
+			// te_html.value = document.documentElement.innerHTML;
+
+			window.editor = CodeMirror.fromTextArea(te, {
+				mode: "javascript",
+				lineNumbers: true,
+				lineWrapping: true,
+				extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
+				foldGutter: true,
+				gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+			});
+
+			// window.editor_html = CodeMirror.fromTextArea(te_html, {
+			// 	mode: "text/html",
+			// 	lineNumbers: true,
+			// 	lineWrapping: true,
+			// 	extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
+			// 	foldGutter: true,
+			// 	gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+			// });
+
+		};
+
+
+		var delay;
+
+		var editor = CodeMirror.fromTextArea(document.getElementById('code-html'), {
+			mode: "text/html",
+				lineNumbers: true,
+				lineWrapping: true,
+				extraKeys: { "Ctrl-Q": function (cm) { cm.foldCode(cm.getCursor()); } },
+				foldGutter: true,
+				gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+		});
+
+		editor.on("change", function () {
+		  clearTimeout(delay);
+		  delay = setTimeout(updatePreview, 300);
+		});
+
+		function updatePreview() {
+		  var previewFrame = document.getElementById('preview');
+		  var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+		  preview.open();
+		  preview.write(editor.getValue());
+		  preview.close();
+		}
+		setTimeout(updatePreview, 300);
+
+
+
+	</script>
+
+
+
+
+</body>
