@@ -7,10 +7,10 @@ module.exports = function (app) {
     // Route for retrieving all projects from the database via a GET request
     app.get('/api/project', function (req, res) {
         // Find all Projects
-        db.Project.findAll({name})
-            .then(function (dbUser) {
+        db.Project.find({})
+            .then(function (dbProject) {
                 // If all Projects are successfully found, send them back to the client
-                res.json(dbproject);
+                res.json(dbProject);
             })
             .catch(function (err) {
                 // If an error occurs, send the error back to the client
@@ -34,7 +34,7 @@ module.exports = function (app) {
     });
 
     // Route for saving updates to a project
-    app.put('/api/project', function (req, res) {
+    app.put('/api/project/:name', function (req, res) {
         // Find an entry by ID and set the item count to the incoming item count
         db.Project.findOneAndUpdate({name: req.body.name})
             .then(function (dbProject) {
@@ -48,7 +48,7 @@ module.exports = function (app) {
     });
 
        // Route for saving updates to a project
-       app.delete('/api/project', function (req, res) {
+       app.delete('/api/project/:name', function (req, res) {
         // Find an entry by ID and set the item count to the incoming item count
         db.Project.findOneAndRemove({name: req.body.name})
             .then(function (dbProject) {
