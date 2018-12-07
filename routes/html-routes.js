@@ -1,7 +1,5 @@
 const path = require('path');
 
-const path = require('path');
-
 //Pass in 'app' for Express
 module.exports = function (app) {
    
