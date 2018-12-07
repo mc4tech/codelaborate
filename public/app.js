@@ -5,7 +5,7 @@ $(document).ready(function(){
         lineNumbers : true,
         autoCloseTags : true,
         mode: "xml"
-    })
+    });
 
     var cssCode = $("#cssEditor")[0];
     var editorCSS = CodeMirror.fromTextArea(cssCode, {
@@ -13,7 +13,7 @@ $(document).ready(function(){
         lineNumbers : true,
         autoCloseTags : true,
         mode: "css"
-    })
+    });
 
     var jsCode = $("#jsEditor")[0];
     var editorJS = CodeMirror.fromTextArea(jsCode, {
@@ -21,6 +21,10 @@ $(document).ready(function(){
         lineNumbers : true,
         autoCloseTags : true,
         mode: "javascript"
-    })
-})
+    });
+});
 
+$(".runBtn").click(function(event){
+    event.preventDefault();
+    $("iframe").contents().find("body").html(code.getValue());
+})
