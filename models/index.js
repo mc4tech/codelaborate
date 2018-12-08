@@ -1,8 +1,3 @@
-module.exports = {
-    //add models to export
-    User: require ("./User")
-  };
-=======
 // Exporting an object containing all of our models
 module.exports = {
     Project: require("./projectmodel"),
